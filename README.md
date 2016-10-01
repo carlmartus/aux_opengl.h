@@ -5,14 +5,14 @@ ensure portability the header does not include any OpenGL headers itself. That
 must be done by the developer before including this library.
 
 For example:
-```
+```c
 #include <GLES2/gl2.h>
 #include "aux_opengl.h"
 ```
 
 This library can check OpenGL error and print them on *stdout* if you define the
 macro **AUXGL_DEBUG** before including this library. Like this:
-```
+```c
 #include <GLES2/gl2.h>
 #define AUXGL_DEBUG
 #include "aux_opengl.h"
