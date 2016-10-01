@@ -6,16 +6,16 @@ must be done by the developer before including this library.
 
 For example:
 ```
-#include <GL/gl.h>
-#include <GL/gl.h>
+#include <GLES2/gl2.h>
+#include "aux_opengl.h"
 ```
 
 This library can check OpenGL error and print them on *stdout* if you define the
 macro **AUXGL_DEBUG** before including this library. Like this:
 ```
-#include <GL/gl.h>
+#include <GLES2/gl2.h>
 #define AUXGL_DEBUG
-#include <GL/gl.h>
+#include "aux_opengl.h"
 ```
 
 The camera function relies on **sinf** and **cosf** from the standard *math.h*
