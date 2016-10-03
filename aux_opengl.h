@@ -133,12 +133,15 @@ static inline GLuint auxGlProgram(const char *srcVert, const char *srcFrag,
 		const char **attributes) {
 
 	GLuint shadVert = auxGlShader(srcVert, GL_VERTEX_SHADER);
-	if (!shadVert) return 0;
+	if (!shadVert) {
+		auxGlErr("Compiling vertex shader\n");
+		return 0;
+	}
 
 	GLuint shadFrag = auxGlShader(srcFrag, GL_FRAGMENT_SHADER);
 	if (!shadFrag) {
 		glDeleteShader(shadFrag);
-		auxGlErr("Compiling vertex shader\n");
+		auxGlErr("Compiling framgent shader\n");
 		return 0;
 	}
 
@@ -146,7 +149,7 @@ static inline GLuint auxGlProgram(const char *srcVert, const char *srcFrag,
 	if (!program) {
 		glDeleteShader(shadVert);
 		glDeleteShader(shadFrag);
-		auxGlErr("Compiling fragment shader\n");
+		auxGlErr("Creating shader program shader\n");
 		return 0;
 	}
 
