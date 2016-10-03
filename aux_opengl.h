@@ -120,7 +120,7 @@ static GLuint auxGlShader(const char *src, GLenum type) {
 	GLuint shad = glCreateShader(type);
 	auxGlCheckError();
 
-	glShaderSource(shad, 1, (const char**) &src, NULL);
+	glShaderSource(shad, 1, (const char**) &src, (void*) 0);
 	glCompileShader(shad);
 
 	if (auxGlCheckShader(shad) != GL_TRUE) return 0;
